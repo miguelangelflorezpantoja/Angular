@@ -1,0 +1,26 @@
+<h3>Listado de registrios</h3>
+
+<div *ngIf="registroEliminado; else Noeliminanada">
+ <h4>Registro eliminado {{registroEliminado}}</h4>
+</div>
+
+<ng-template #Noeliminanada>
+
+  <h3>No ha borrado nada</h3>
+
+</ng-template>
+
+<button
+*ngIf="ListaHeroes.length>0"
+ (click)="deleteRegistro()" class="btn btn-outline-danger">
+
+  Eliminar último registro
+
+  </button>
+
+<ul class="mt2 list-group">
+
+<li *ngFor="let name of ListaHeroes"
+ class="list-group-item">{{name}}</li>
+
+</ul>
